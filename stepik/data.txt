@@ -1,0 +1,5 @@
+https://stepik.org/learn
+
+name: Александр Дмитриевич Гавриленко
+email: aliaksandr.haurylenka.gmail.com
+pass: goric0312
