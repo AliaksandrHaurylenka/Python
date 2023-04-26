@@ -109,6 +109,43 @@ print(text)
 print(sum(map(int, text)))
 
 # ex5.4_4
+num = list(map(int, input().split()))
+
+# print(num)
+for i, x in enumerate(num):
+    num[i] = x ** 2
+
+print(*num)
+
+
 # ex5.4_5
+num = list(map(int, input().split()))
+
+lst = [] # Создаем новый список.
+for i, x in enumerate(num):
+    y = (x, x)
+    lst += y # в конец списка добавляем двойное значение каждой итерации
+
+print(*lst)
+
+
 # ex5.4_6
+num = list(map(float, input().split()))
+# print(num)
+
+x = num[0]
+for i in num:
+    if i < x:
+        x = i
+
+print(x)
+
+
 # ex5.4_7
+num = list(map(float, input().split()))
+
+for i, x in enumerate(num):
+    if x < 0:
+        num[i] = -1.0
+
+print(*num)
