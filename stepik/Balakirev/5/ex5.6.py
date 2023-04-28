@@ -51,19 +51,30 @@
 
 
 # ex5.6_4
-# import sys
+import sys
 #
 # # считывание списка из входного потока
-# s = sys.stdin.readlines()
-# lst_in = [list(map(int, x.strip().split())) for x in s]
+s = sys.stdin.readlines()
+lst_in = [list(map(int, x.strip().split())) for x in s]
 # # 1 0 0 0 0
 # # 0 0 1 0 1
 # # 0 0 0 0 0
 # # 0 1 0 1 0
 # # 0 0 0 0 0
 # print(lst_in)
+# print(len(lst_in[0]))
+
+# for i in range(len(lst_in[i]) - 1):
+#     for j in range(len(lst_in) - 1):
 
 # здесь продолжайте программу (используйте список lst_in)
+res = 'ДА'
+for i in range(0, 4):
+    for j in range(0, 4):
+        if lst_in[i][j] + lst_in[i][j + 1] + lst_in[i + 1][j] + lst_in[i + 1][j + 1] > 1:
+            res = 'НЕТ'
+
+print(res)
 
 
 # ex5.6_5
@@ -132,50 +143,50 @@
 
 # ex5.6_8
 # Import time module
-import time
-
-n = int(input())
-# banknotes = [1, 2, 4, 8, 16, 32, 64]
-banknotes = [64, 32, 16, 8, 4, 2, 1]
-
-# record start time
-start = time.time()
-
-# Мое решение работает быстрее
-lst = []
-for i in range(len(banknotes)):
-    a = n // banknotes[i]
-
-    for j in range(0, a):
-        lst.append(banknotes[i])
-
-    n = n % banknotes[i]
-
-print(*lst)
-
-# record end time
-end = time.time()
-
-print('\n')
-# # print the difference between start
-# # and end time in milli. secs
-print("The time of execution of above program is :",
-      (end - start) * 10 ** 3, "ms")
-
-
-n = int(input())
-start = time.time()
-# Другое решение
-for i in banknotes:
-    while n >= i:
-        print(i, end=' ')
-        n -= i
-
-# record end time
-end = time.time()
-
-print('\n')
-# # print the difference between start
-# # and end time in milli. secs
-print("The time of execution of above program is :",
-      (end - start) * 10 ** 3, "ms")
+# import time
+#
+# n = int(input())
+# # banknotes = [1, 2, 4, 8, 16, 32, 64]
+# banknotes = [64, 32, 16, 8, 4, 2, 1]
+#
+# # record start time
+# start = time.time()
+#
+# # Мое решение работает быстрее
+# lst = []
+# for i in range(len(banknotes)):
+#     a = n // banknotes[i]
+#
+#     for j in range(0, a):
+#         lst.append(banknotes[i])
+#
+#     n = n % banknotes[i]
+#
+# print(*lst)
+#
+# # record end time
+# end = time.time()
+#
+# print('\n')
+# # # print the difference between start
+# # # and end time in milli. secs
+# print("The time of execution of above program is :",
+#       (end - start) * 10 ** 3, "ms")
+#
+#
+# n = int(input())
+# start = time.time()
+# # Другое решение
+# for i in banknotes:
+#     while n >= i:
+#         print(i, end=' ')
+#         n -= i
+#
+# # record end time
+# end = time.time()
+#
+# print('\n')
+# # # print the difference between start
+# # # and end time in milli. secs
+# print("The time of execution of above program is :",
+#       (end - start) * 10 ** 3, "ms")
