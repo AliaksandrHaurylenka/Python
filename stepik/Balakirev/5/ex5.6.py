@@ -1,12 +1,12 @@
 # ex5.6_1
 # N = int(input())
-#
+
 # lst = []
 # for i in range(N):
 #     lst.append([1] * N)
 #     for j in range(N):
 #         lst[i][-1] = 5
-#
+
 #     print(*lst[i])
 
 
@@ -15,7 +15,8 @@
 
 # считывание списка из входного потока
 # lst_in = list(map(str.strip, sys.stdin.readlines()))
-#
+# В PyCharm для завершения ввода используется сочетание клавиш Ctrl + D
+# в VS code Ctrl +Z и далее Enter
 # # здесь продолжайте программу (используйте список lst_in)
 # for row in lst_in:
 #     # row = row.replace('  ', ' ')
@@ -51,11 +52,11 @@
 
 
 # ex5.6_4
-import sys
+# import sys
 #
 # # считывание списка из входного потока
-s = sys.stdin.readlines()
-lst_in = [list(map(int, x.strip().split())) for x in s]
+# s = sys.stdin.readlines()
+# lst_in = [list(map(int, x.strip().split())) for x in s]
 # # 1 0 0 0 0
 # # 0 0 1 0 1
 # # 0 0 0 0 0
@@ -68,28 +69,41 @@ lst_in = [list(map(int, x.strip().split())) for x in s]
 #     for j in range(len(lst_in) - 1):
 
 # здесь продолжайте программу (используйте список lst_in)
-res = 'ДА'
-for i in range(0, 4):
-    for j in range(0, 4):
-        if lst_in[i][j] + lst_in[i][j + 1] + lst_in[i + 1][j] + lst_in[i + 1][j + 1] > 1:
-            res = 'НЕТ'
-
-print(res)
+# res = 'ДА'
+# for i in range(0, 4):
+#     for j in range(0, 4):
+#         if lst_in[i][j] + lst_in[i][j + 1] + lst_in[i + 1][j] + lst_in[i + 1][j + 1] > 1:
+#             res = 'НЕТ'
+#
+# print(res)
 
 
 # ex5.6_5
-# import sys
+import sys
 #
 # # считывание списка из входного потока
-# s = sys.stdin.readlines()
-# lst_in = [list(map(int, x.strip().split())) for x in s]
+s = sys.stdin.readlines()
+lst_in = [list(map(int, x.strip().split())) for x in s]
 # # 2 3 4 5 6
 # # 3 2 7 8 9
 # # 4 7 2 0 4
 # # 5 8 0 2 1
 # # 6 9 4 1 2
 # print(lst_in)
+
 # здесь продолжайте программу (используйте список lst_in)
+
+res = 'ДА'
+for i in range(0, 5):
+    for j in range(0, 5):
+        if lst_in[i][j] != lst_in[j][i]:
+            res = 'НЕТ'
+            break
+
+        # print(lst_in[i][j])
+        # print(lst_in[j][i])
+
+print(res)
 
 
 # ex5.6_6
